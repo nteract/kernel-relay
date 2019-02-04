@@ -46,21 +46,40 @@ The query example below showcases how to use the GraphQL API to get the status
 of a kernel.
 
 ```
-# Query
-query Kernel {
-    status(kernelId: "my-kernel-id") {
-        displayName,
-        status
-    }
+> query GetKernels {
+  listKernelSpecs {
+    name
+  }
 }
-# Response
+
 {
-    data: {
-        kernel: {
-            displayName: "Python 3"
-            status: "idle"
-        }
-    }
+  "data": {
+    "listKernelSpecs": [
+      {
+        "name": "python3"
+      }
+    ]
+  }
+}
+
+
+> mutation StartJupyterKernel {
+  startKernel(name: "python3") {
+    id
+    status
+  }
+}
+
+{
+  "data": {
+    "startKernel": [
+      {
+        "name": "python3",
+        "id": "a-uuid",
+        "status": "started"
+      }
+    ]
+  }
 }
 ```
 
