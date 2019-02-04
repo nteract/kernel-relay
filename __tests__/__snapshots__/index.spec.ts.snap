@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Mutations launches a kernel 1`] = `
+Object {
+  "data": Object {
+    "startKernel": Object {
+      "id": "kernel1",
+      "status": "launched",
+    },
+  },
+  "errors": undefined,
+  "extensions": undefined,
+  "http": Object {
+    "headers": Headers {
+      Symbol(map): Object {},
+    },
+  },
+}
+`;
+
+exports[`Mutations shuts down a kernel 1`] = `
+Object {
+  "data": Object {
+    "shutdownKernel": Object {
+      "id": "kernel1",
+      "status": "shutdown",
+    },
+  },
+  "errors": undefined,
+  "extensions": undefined,
+  "http": Object {
+    "headers": Headers {
+      Symbol(map): Object {},
+    },
+  },
+}
+`;
+
+exports[`Queries returns a list of kernelspecs 1`] = `
+Object {
+  "data": Object {
+    "listKernelSpecs": Array [
+      Object {
+        "name": "python3",
+      },
+    ],
+  },
+  "errors": undefined,
+  "extensions": undefined,
+  "http": Object {
+    "headers": Headers {
+      Symbol(map): Object {},
+    },
+  },
+}
+`;

@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "declaration": true,
+    "esModuleInterop": true,
+    "composite": true,
+    "lib": ["esnext", "dom"],
+    "target": "es2015",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "skipLibCheck": true,
+    "noImplicitAny": true,
+    "plugins": [
+      { "name": "typescript-styled-plugin" },
+      { "name": "typescript-tslint-plugin" }
+    ],
+    "resolveJsonModule": true,
+    "preserveWatchOutput": true,
+    "jsx": "react",
+    "typeRoots": ["./node_modules/@types", "types"],
+    "outDir": "lib",
+    "rootDir": "src"
+  },
+  "include": ["src"]
+}
