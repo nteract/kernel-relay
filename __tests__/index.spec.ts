@@ -65,7 +65,7 @@ describe("Queries", () => {
 });
 
 describe("Mutations", () => {
-  let kernelId;
+  let kernelId: string;
   it("launches a kernel", async () => {
     const { mutate } = createTestClient(createServer());
     const START_KERNEL = gql`
@@ -83,7 +83,7 @@ describe("Mutations", () => {
     // and it's easier to diagnose if we use an expect matcher here
     expect(response.errors).toBeUndefined();
 
-    kernelId = response.data.startKernel.id;
+    kernelId = response.data ? response.data.startKernel.id: undefined;
 
     expect(response).toMatchSnapshot();
   });
@@ -100,7 +100,7 @@ describe("Mutations", () => {
     const response = await mutate({
       mutation: SHUTDOWN_KERNEL,
       variables: { id: kernelId }
-    });
+    } as any);
 
     // When the response has errors, they'll be an array
     // and it's easier to diagnose if we use an expect matcher here
