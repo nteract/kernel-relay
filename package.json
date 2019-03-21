@@ -16,7 +16,8 @@
     "build:watch": "npm run build -- --watch",
     "start": "ncc run src/index.ts",
     "dev": "concurrently \"nodemon lib/index.js\" \"npm run build:watch\"",
-    "test": "npx jest"
+    "test": "npx jest",
+    "clean": "rimraf node_modules"
   },
   "jest": {
     "preset": "ts-jest",

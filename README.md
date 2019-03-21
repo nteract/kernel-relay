@@ -40,6 +40,24 @@ You can then run the GraphQL server with a playground UI.
 $ yarn start
 ```
 
+## Docker Setup
+
+To run an instance of the kernel-relay within a Docker container, you can execute the following commands. Note that you will need to have Docker installed on your machine.
+
+First, run the following in the cloned directory to build a Docker image.
+
+```
+$ docker build -t nteract/kernel-relay-dev:latest .
+```
+
+Then, run a Docker container based on this image.
+
+```
+$ docker run  -p 4000:4000 -t nteract/kernel-relay-dev:latest
+```
+
+Next, navigate to http://localhost:4000 in your browser to interact with the instance of the kernel-relay running within your Docker container.
+
 ## Usage
 
 The query example below showcases how to use the GraphQL API to get the status
