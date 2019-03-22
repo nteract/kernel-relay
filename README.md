@@ -8,6 +8,11 @@ Through GraphQL queries and mutations, the API enables the user to launch
 kernels, subscribe to the status of a kernel, send Jupyter messages from a
 client to a kernel, and more.
 
+The architecture diagram below shows how the kernel-relay sits alongisde Jupyter kernels
+and serves clients.
+
+![nteract-kernel-relay](https://user-images.githubusercontent.com/1857993/54857237-6b0b2a80-4cbb-11e9-8ca9-68c4a25359a2.png)
+
 ## Installation
 
 ```
