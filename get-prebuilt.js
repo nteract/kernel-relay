@@ -7,9 +7,10 @@
 
 const path = require("path");
 const fs = require("fs");
+const mkdirp = require("mkdirp");
 
 const placementDir = path.join("lib", "build", "Release");
-fs.mkdirSync(placementDir, { recursive: true });
+mkdirp.sync(placementDir);
 const placement = path.join(placementDir, "zmq.node");
 
 const zmqDir = path.dirname(require.resolve("zeromq"));
