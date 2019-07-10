@@ -11,8 +11,13 @@ const Types = gql`
   scalar JSON
 
   type KernelSpec {
+    argv: [String]
+    display_name: String
+    files: [String]
     id: ID!
+    language: String
     name: String
+    resources_dir: String
   }
 
   type KernelSession {
@@ -114,9 +119,13 @@ const resolvers = {
       const kernelspecs = await findAll();
 
       return Object.keys(kernelspecs).map(key => {
+        const { files, name, resources_dir, spec } = kernelspecs[key];
         return {
           id: key,
-          ...kernelspecs[key]
+          name,
+          files,
+          resources_dir,
+          ...spec
         };
       });
     },
